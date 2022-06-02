@@ -1,7 +1,7 @@
 class InMemoryRepo {
 	constructor() {
 		this.data = new Map();
-
+		this.lastIndex = 0;
 	}
 
 	getAll() {
@@ -12,8 +12,9 @@ class InMemoryRepo {
 		return this.data.get(id);
 	}
 
-	create(id, obj) {
-		this.data.set(id, obj);
+	create(obj) {
+		this.data.set(this.lastIndex, obj);
+		this.lastIndex++;
 	}
 
 	update(id, obj) {
