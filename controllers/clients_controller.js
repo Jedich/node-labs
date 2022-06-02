@@ -1,7 +1,7 @@
-const {ClientsRepo} = require("../repository/clients");
+const {ClientRepo} = require("../repository/clients");
 const {Client} = require("../models/client");
 
-var clientRepo = new ClientsRepo();
+var clientRepo = new ClientRepo();
 
 exports.getAll = function(req, res) {
 	res.send(clientRepo.getAll());

@@ -1,3 +1,5 @@
+const {InMemoryRepo} = require("./repo");
+
 class ClientRepo extends InMemoryRepo {
 	findByName(name) {
 		let res = []

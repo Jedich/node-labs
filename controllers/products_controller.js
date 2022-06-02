@@ -8,7 +8,8 @@ exports.getAll = function(req, res) {
 }
 
 exports.create = function(req, res) {
-	let product = new Product(req.body.id, req.body.name, req.body.category_id, req.body.quantity)
+	console.log(req.body)
+	let product = new Product(req.body.id, req.body.name, req.body.category_id, req.body.quantity);
 	productRepo.create(product);
 	res.send(200);
 }

@@ -5,7 +5,7 @@ class InMemoryRepo {
 	}
 
 	getAll() {
-		return this.data.values();
+		return Object.fromEntries(this.data);
 	}
 
 	getByID(id) {
@@ -14,6 +14,7 @@ class InMemoryRepo {
 
 	create(obj) {
 		this.data.set(this.lastIndex, obj);
+		console.log(this.data.entries())
 		this.lastIndex++;
 	}
 
@@ -33,3 +34,7 @@ class InMemoryRepo {
 		}
 	}
 }
+
+module.exports = {
+	InMemoryRepo: InMemoryRepo
+};

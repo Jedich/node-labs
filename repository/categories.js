@@ -1,4 +1,4 @@
-const InMemoryRepo = require("./repo");
+const {InMemoryRepo} = require("./repo");
 
 class CategoryRepo extends InMemoryRepo {
 

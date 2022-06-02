@@ -1,4 +1,5 @@
 const {CategoryRepo} = require("./categories");
+const {InMemoryRepo} = require("./repo");
 
 class ProductRepo extends InMemoryRepo {
 	findByCategory(category_id) {

@@ -1,14 +1,16 @@
-const http = require('http');
-
-const hostname = '127.0.0.1';
+const express = require('express');
+const app = express();
 const port = 3000;
+var routes = require("./routes");
+var bodyParser = require('body-parser');
 
-const server = http.createServer((req, res) => {
-	res.statusCode = 200;
-	res.setHeader('Content-Type', 'text/plain');
-	res.end('Hello World');
-});
+// configure the app to use bodyParser()
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
+app.use(bodyParser.json());
+app.use("/app", routes);
 
-server.listen(port, hostname, () => {
-	console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(port, () => {
+	console.log(`Listening on port ${port}`)
+})
